@@ -13,7 +13,7 @@ const inserstionSort = (data) => {
   }
   console.log(data);
 };
-inserstionSort(data);
+// inserstionSort(data);
 // O(N^2) Quadratic
 
 const bubbleSort = (data) => {
@@ -33,19 +33,22 @@ const bubbleSort = (data) => {
   binarySearch(data);
 };
 
-const binarySearch = (data) => {
-  let beggining = 0;
-  let n = data.length;
-  let searched = 6;
-  let middle = 0;
-  while (data[middle] != searched) {
-    middle = (n - beggining) / 2;
-    if (data[middle] != searched) {
-      beggining = middle;
-    } else {
-      console.log("go the the number at " + middle);
+const binarySearch = (data, target) => {
+  let leftIndex = 0;
+  let rightIndex = data.length - 1;
+  let middleIndex = 0;
+  while (leftIndex <= rightIndex) {
+    middleIndex = Math.floor((rightIndex + leftIndex) / 2);
+    let midNumber = data[middleIndex];
+    if (midNumber == target) {
+      return middleIndex;
+    } else if (midNumber < target) {
+      leftIndex = middleIndex + 1;
+    } else if (midNumber > target) {
+      rightIndex = middleIndex - 1;
     }
   }
+  return -1;
 };
 
 //Search for two numbers in an array that adds up to the target
@@ -60,7 +63,10 @@ const getSums = (data, target) => {
   }
 };
 
-let numbers = [2, 4, 5, 4];
-getSums(numbers, 8);
-
-// bubbleSort(data); //Time complextity = O(n^3)  Worst case scenario
+let numbers = [1, 2, 4, 5, 6, 8, 9, 10, 14, 16];
+// getSums(numbers, 8);
+// binarySearch(numbers, 14);
+console.log(
+  "The tager number is in index " + binarySearch(numbers, 2) + " in the array"
+);
+// // bubbleSort(data); //Time complextity = O(n^3)  Worst case scenario
