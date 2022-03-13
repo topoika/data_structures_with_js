@@ -1,7 +1,6 @@
 let data = [5, 3, 8, 6, 9, 7, 2];
 
 const inserstionSort = (data) => {
-  // console.timeLog();
   for (let i = 1; i < data.length; i++) {
     let current = data[i];
     let j = i - 1;
@@ -13,7 +12,7 @@ const inserstionSort = (data) => {
   }
   console.log(data);
 };
-// inserstionSort(data);
+// inserstionSort([8, 2, 6, 7, 8]);
 // O(N^2) Quadratic
 
 const bubbleSort = (data) => {
@@ -66,7 +65,23 @@ const getSums = (data, target) => {
 let numbers = [1, 2, 4, 5, 6, 8, 9, 10, 14, 16];
 // getSums(numbers, 8);
 // binarySearch(numbers, 14);
-console.log(
-  "The tager number is in index " + binarySearch(numbers, 2) + " in the array"
-);
+// console.log(
+//   "The tager number is in index " + binarySearch(numbers, 2) + " in the array"
+// );
 // // bubbleSort(data); //Time complextity = O(n^3)  Worst case scenario
+const fizzBuzz = (range) => {
+  let arr = [];
+  for (let i = 1; i <= range; i++) {
+    if (i % 3 == 0) {
+      arr[i] = "Fizz";
+    }
+    if (i % 15 == 0) {
+      arr[i] = "Buzz";
+    }
+    if (i % 3 == 0 && i % 15 == 0) {
+      arr[i] = "FizzBuzz";
+    }
+  }
+  console.log(arr);
+};
+fizzBuzz(100);
