@@ -84,4 +84,19 @@ const fizzBuzz = (range) => {
   }
   console.log(arr);
 };
-fizzBuzz(100);
+// fizzBuzz(100);
+
+const fibonacciSearch = (data, target) => {
+  fib1 = 0;
+  fib2 = 1;
+  fibm = fib1 + fib2;
+  while (data[fibm] != target && fib2 < data.length) {
+    fib1 = fib2;
+    fib2 = fibm;
+    fibm = fib1 + fib2;
+    console.log(data[fibm]);
+    return data[fibm];
+  }
+};
+
+fibonacciSearch(numbers, 9);
