@@ -21,7 +21,6 @@ const bubbleSort = (data) => {
     for (let j = i; j > 0; j--) {
       //O(n)
       if (data[j] < data[j - 1]) {
-        //O(n)
         let less = data[j];
         data[j] = data[j - 1];
         data[j - 1] = less;
@@ -86,6 +85,22 @@ const fizzBuzz = (range) => {
 };
 // fizzBuzz(100);
 
+const selectionSort = (data) => {
+  for (let i = 1; i < data.length - 1; i++) {
+    let minIndex = 1;
+    for (let j = i + 1; j < numbers; j++) {
+      if (data[j] < data[minIndex]) {
+        minIndex = j;
+      }
+    }
+    let current = data[i];
+    data[i] = data[minIndex];
+    data[minIndex] = current;
+  }
+  console.log(data);
+};
+
+selectionSort(data);
 const fibonacciSearch = (data, target) => {
   fib1 = 0;
   fib2 = 1;
@@ -99,4 +114,4 @@ const fibonacciSearch = (data, target) => {
   }
 };
 
-fibonacciSearch(numbers, 9);
+// fibonacciSearch(numbers, 9);
