@@ -16,38 +16,35 @@ const inserstionSort = (data) => {
 // O(N^2) Quadratic
 
 const bubbleSort = (data) => {
-  for (let i = 1; i <= data.length; i++) {
-    //O(n)
-    for (let j = i; j > 0; j--) {
-      //O(n)
-      if (data[j] < data[j - 1]) {
-        let less = data[j];
-        data[j] = data[j - 1];
-        data[j - 1] = less;
+  for (let i = data.length - 1; i > 0; i--) {
+    for (let j = 0; j <= i; j++) {
+      if (data[j] > data[j + 1]) {
+        let temp = data[j];
+        data[j] = data[j + 1];
+        data[j + 1] = temp;
       }
-      console.log(data);
     }
   }
-  binarySearch(data);
+  console.log(data);
 };
 
-const binarySearch = (data, target) => {
-  let leftIndex = 0;
-  let rightIndex = data.length - 1;
-  let middleIndex = 0;
-  while (leftIndex <= rightIndex) {
-    middleIndex = Math.floor((rightIndex + leftIndex) / 2);
-    let midNumber = data[middleIndex];
-    if (midNumber == target) {
-      return middleIndex;
-    } else if (midNumber < target) {
-      leftIndex = middleIndex + 1;
-    } else if (midNumber > target) {
-      rightIndex = middleIndex - 1;
-    }
-  }
-  return -1;
-};
+// const bubbleSort = (data) => {
+//   for (let i = 1; i <= data.length; i++) {
+//     //O(n)
+//     for (let j = i; j > 0; j--) {
+//       //O(n)
+//       if (data[j] < data[j - 1]) {
+//         let less = data[j];
+//         data[j] = data[j - 1];
+//         data[j - 1] = less;
+//       }
+//       console.log(data);
+//     }
+//   }
+//   binarySearch(data);
+// };
+
+
 
 //Search for two numbers in an array that adds up to the target
 
